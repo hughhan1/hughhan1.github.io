@@ -2,12 +2,12 @@ import * as React from 'react';
 
 import {getAbbreviatedDate} from '../../common/utils';
 
-import './blog-list-item.css';
+import './index.css';
 
 interface Props {
   title: string;
-	date: Date;
-};
+  date: Date;
+}
 
 export const BlogListItem: React.SFC<Props> = (props: Props) => {
   return (
@@ -16,6 +16,6 @@ export const BlogListItem: React.SFC<Props> = (props: Props) => {
       <span className="blog-list-item__date">{getAbbreviatedDate(props.date)}</span>
     </div>
   );
-}
+};
 
 export default BlogListItem;

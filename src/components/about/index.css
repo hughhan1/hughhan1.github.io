@@ -1,0 +1,17 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0 auto;
+
+  height: 100%;
+  max-width: 500px;
+
+  font-family: 'Karla', sans-serif;
+}
+
+.about p {
+  font-size: 14px;
+  line-height: 1.8em;
+}

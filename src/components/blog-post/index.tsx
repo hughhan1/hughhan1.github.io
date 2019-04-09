@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import Footer from '../footer/footer';
+import Footer from '../footer';
 
-interface Props {};
+interface Props {}
 
 export const BlogPost: React.SFC<Props> = (props: Props) => {
   return (
@@ -10,6 +10,6 @@ export const BlogPost: React.SFC<Props> = (props: Props) => {
       <Footer />
     </div>
   );
-}
+};
 
 export default BlogPost;
