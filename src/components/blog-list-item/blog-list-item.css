@@ -1,0 +1,17 @@
+.blog-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  font-family: 'Karla', sans-serif;
+}
+
+.blog-list-item__title {
+
+}
+
+.blog-list-item__date {
+  color: gray;
+}
