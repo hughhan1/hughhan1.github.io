@@ -8,13 +8,13 @@ interface Props {
   title: string;
 }
 
-export const BlogPost: React.SFC<Props> = (props: Props) => {
-  return (
-    <PageContainer>
-      <Header text={props.title} />
-      <Footer />
-    </PageContainer>
-  );
-};
+// export const BlogPost: React.SFC<Props> = (props: Props) => {
+//   return (
+//     <PageContainer>
+//       <Header text={props.title} />
+//       <Footer />
+//     </PageContainer>
+//   );
+// };
 
-export default BlogPost;
+// export default BlogPost;

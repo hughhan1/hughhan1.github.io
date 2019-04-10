@@ -11,6 +11,12 @@
 .home-page--0 {
   background-image: url('../../static/img/flatiron_building.jpg');
 }
+.home-page--1 {
+  background-image: url('../../static/img/tv.jpg');
+}
+.home-page--2 {
+  background-image: url('../../static/img/strawberries.jpg');
+}
 
 .home-page__title {
   position: relative;
@@ -19,4 +25,8 @@
   font-size: 6.5vh;
   font-weight: 200;
   color: var(--flatiron_orange);
+}
+
+.home-page__footer {
+  color: indigo;
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
+import {Routes} from './common/routes';
+
 import AboutPage from './components/about-page';
 import BlogPage from './components/blog-page';
 import ContactPage from './components/contact-page';
@@ -13,10 +15,10 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Router>
-    <Route path="/" exact component={HomePage} />
-    <Route path="/about/" component={AboutPage} />
-    <Route path="/blog/" component={BlogPage} />
-    <Route path="/contact/" component={ContactPage} />
+    <Route path={Routes.home} exact component={HomePage} />
+    <Route path={Routes.about} component={AboutPage} />
+    <Route path={Routes.blog} component={BlogPage} />
+    <Route path={Routes.contact} component={ContactPage} />
   </Router>,
   document.getElementById('root')
 );

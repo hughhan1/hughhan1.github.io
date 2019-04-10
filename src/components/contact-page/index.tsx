@@ -15,7 +15,7 @@ export const ContactPage: React.SFC<{}> = (props: {}) => {
         Let's get in touch!
         <ContactForm />
       </PageBody>
-      <Footer />
+      <Footer currentPage="contact" />
     </PageContainer>
   );
 };

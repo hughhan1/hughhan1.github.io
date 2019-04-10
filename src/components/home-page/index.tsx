@@ -7,7 +7,7 @@ import PageContainer from '../page-container';
 import './index.css';
 
 const FIVE_SECONDS_IN_MILLISECONDS = 5000;
-const NUM_MODIFIERS = 1;
+const NUM_MODIFIERS = 3;
 
 interface State {
   modifier: number;
@@ -46,7 +46,7 @@ class HomePage extends React.Component<{}, State> {
       >
         <div className={classNames('home-page__title', 'home-page__title--' + this.state.modifier)}>
           hugh han
-          <Footer />
+          <Footer className="home-page__footer" currentPage="home" />
         </div>
       </PageContainer>
     );
