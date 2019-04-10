@@ -1,14 +1,19 @@
 import * as React from 'react';
 
 import Footer from '../footer';
+import Header from '../header';
+import PageContainer from '../page-container';
 
-interface Props {}
+interface Props {
+  title: string;
+}
 
 export const BlogPost: React.SFC<Props> = (props: Props) => {
   return (
-    <div className="blog-post">
+    <PageContainer>
+      <Header text={props.title} />
       <Footer />
-    </div>
+    </PageContainer>
   );
 };
 

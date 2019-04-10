@@ -1,23 +1,30 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import {Link} from 'react-router-dom';
 
 import './index.css';
 
-interface Props {}
+interface Props {
+  className?: string;
+}
 
 export const Footer: React.SFC<Props> = (props: Props) => {
   return (
-    <div className="footer">
+    <div className={classNames('footer', props.className)}>
       <span className="footer__item">
-        <Link to="/">Home</Link>
+        <Link to="/">home</Link>
       </span>
       {' · '}
       <span className="footer__item">
-        <Link to="/about/">About</Link>
+        <Link to="/about/">about</Link>
       </span>
       {' · '}
       <span className="footer__item">
-        <Link to="/blog/">Blog</Link>
+        <Link to="/blog/">blog</Link>
+      </span>
+      {' · '}
+      <span className="footer__item">
+        <Link to="/contact/">contact</Link>
       </span>
     </div>
   );

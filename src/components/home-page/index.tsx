@@ -2,21 +2,21 @@ import * as React from 'react';
 import classNames from 'classnames';
 
 import Footer from '../footer';
+import PageContainer from '../page-container';
 
 import './index.css';
 
 const FIVE_SECONDS_IN_MILLISECONDS = 5000;
 const NUM_MODIFIERS = 1;
 
-interface Props {}
 interface State {
   modifier: number;
 }
 
-class Home extends React.Component<Props, State> {
+class HomePage extends React.Component<{}, State> {
   interval: NodeJS.Timeout | null;
 
-  constructor(props: Props) {
+  constructor(props: {}) {
     super(props);
     this.interval = null;
     this.state = {
@@ -40,16 +40,17 @@ class Home extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className={classNames('home', 'home--' + this.state.modifier)}>
-        <div className="home__body">
-          <span className={classNames('home__title', 'home__title--' + this.state.modifier)}>
-            HUGH HAN
-          </span>
+      <PageContainer
+        className={classNames('home-page', 'home-page--' + this.state.modifier)}
+        isHomePage={true}
+      >
+        <div className={classNames('home-page__title', 'home-page__title--' + this.state.modifier)}>
+          hugh han
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </PageContainer>
     );
   }
 }
 
-export default Home;
+export default HomePage;
