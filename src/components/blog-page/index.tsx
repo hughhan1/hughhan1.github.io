@@ -22,7 +22,7 @@ export const BlogPage: React.SFC<{}> = (props: {}) => {
           <BlogListItem title="Yayoi Kusama" date={new Date()} />
         </BlogListSection>
       </PageBody>
-      <Footer />
+      <Footer currentPage="blog" />
     </PageContainer>
   );
 };

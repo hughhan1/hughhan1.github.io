@@ -47,8 +47,9 @@ export const AboutPage: React.SFC<{}> = (props: {}) => {
           If you want to get to know me, please <Link to="/contact/">reach out</Link>! There are so
           few things in life that I find as beautiful as meaningful connections with other people.
         </p>
+        <p>Thanks for stopping by!</p>
       </PageBody>
-      <Footer />
+      <Footer currentPage="about" />
     </PageContainer>
   );
 };
