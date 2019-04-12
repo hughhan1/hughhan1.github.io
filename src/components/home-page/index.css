@@ -10,6 +10,7 @@
   align-items: flex-end;
 
   background-size: cover;
+  background-position: center center;
 }
 
 .home-page--0 {
@@ -26,8 +27,8 @@
   position: relative;
   margin: 8vh 8vw 0 auto;
 
-  font-size: 6.5vh;
-  font-weight: 200;
+  font-size: 52px;
+  font-weight: 220;
   color: var(--flatiron_orange);
 }
 
