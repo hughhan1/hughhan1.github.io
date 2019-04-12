@@ -20,8 +20,7 @@ export const AboutPage: React.SFC<{}> = (props: {}) => {
           development in London and Copenhagen.
         </p>
         <p>
-          I love photography, journaling, and late-romantic classical music. I'm a proponent of
-          open-source software; I've previously worked on a{' '}
+          I previously worked on a few open source projects: most notably a{' '}
           <a href="https://github.com/mypyc/mypyc" target="_blank">
             Python compiler
           </a>
@@ -33,14 +32,26 @@ export const AboutPage: React.SFC<{}> = (props: {}) => {
           <a href="https://github.com/noahpresler/semesterly" target="_blank">
             course-scheduling platform
           </a>
-          . In my free time I like to dance, read, shoot photos and videos, and play (what I think
-          is) a mean game of Super Smash Bros Melee.
+          .
+        </p>
+        <p>
+          I love photography, journaling, and late-romantic classical music. In my free time I like
+          to dance, read, shoot photos and videos, and play (what I think is) a mean game of Super
+          Smash Bros Melee.
         </p>
         <p>
           Here are some additional things that make me happy.
           <ul>
-            <li>photographs of fond memories</li>
-            <li>friends</li>
+            <li>mediocrely taken photographs of fond memories</li>
+            <li>well yet concisely documented code</li>
+            <li>
+              Rachmaninoff's{' '}
+              <a href="https://www.youtube.com/watch?v=ShvUF-ucOSg" target="_blank">
+                lilacs
+              </a>
+            </li>
+            <li>family</li>
+            <li>friends who love me</li>
           </ul>
         </p>
         <p>

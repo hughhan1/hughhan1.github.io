@@ -8,6 +8,8 @@ import PageContainer from '../page-container';
 import {getAbbreviatedDate} from '../../common/utils';
 
 import './index.css';
+import {Link} from 'react-router-dom';
+import {BlogRoutesMap} from '../../common/routes';
 
 export const BlogPage: React.SFC<{}> = (props: {}) => {
   return (
@@ -35,10 +37,11 @@ interface BlogListItemProps {
 }
 
 const BlogListItem: React.SFC<BlogListItemProps> = (props: BlogListItemProps) => {
+  const route = BlogRoutesMap[props.title.replace(/\s+/g, '-').toLowerCase()];
   return (
     <div className="blog-list-item">
       <span className="blog-list-item__title">
-        <a href="">{props.title}</a>
+        <Link to={route}>{props.title}</Link>
       </span>
       <span className="blog-list-item__date">{getAbbreviatedDate(props.date)}</span>
     </div>

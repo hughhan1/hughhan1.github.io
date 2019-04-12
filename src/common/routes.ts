@@ -1,12 +1,16 @@
-interface RoutesType {
+interface RoutesMapType {
   [key: string]: string;
 }
 
 export const Pages = ['home', 'about', 'blog', 'contact'];
 
-export const Routes: RoutesType = {
+export const RoutesMap: RoutesMapType = {
   home: '/',
   about: '/about/',
   blog: '/blog/',
   contact: '/contact/',
+};
+
+export const BlogRoutesMap: RoutesMapType = {
+  'working-at-mongodb': '/notes/working-at-mongodb',
 };

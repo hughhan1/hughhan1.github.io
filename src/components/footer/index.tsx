@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {Link} from 'react-router-dom';
 
-import {Pages, Routes} from '../../common/routes';
+import {Pages, RoutesMap} from '../../common/routes';
 
 import './index.css';
 
@@ -18,7 +18,7 @@ export const Footer: React.SFC<Props> = (props: Props) => {
         {Pages.filter(page => page !== props.currentPage).map((page, index) => (
           <span>
             <span className="footer-navigation__item">
-              <Link to={Routes[page]}>{page}</Link>
+              <Link to={RoutesMap[page]}>{page}</Link>
             </span>
             {index < Pages.length - 2 && '·'}
           </span>
