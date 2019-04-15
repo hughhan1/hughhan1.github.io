@@ -4,7 +4,7 @@ import BlogPost from './index';
 
 export const WorkingAtMongodb: React.SFC<{}> = (props: {}) => {
   return (
-    <BlogPost title="Working at MongoDB">
+    <BlogPost title="Working at MongoDB" date={new Date(2017, 11, 25)}>
       <p>
         Last Friday marked my last day as an intern working at MongoDB. Inc. During my time here,
         I’ve met countless amazing people—full timers and interns alike—and had one of my most

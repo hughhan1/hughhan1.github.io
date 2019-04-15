@@ -17,11 +17,11 @@ export const BlogPage: React.SFC<{}> = (props: {}) => {
       <Header text="blog" />
       <PageBody>
         <BlogListSection title="2017 ¬">
-          <BlogListItem title="Three days with a Leica M" date={new Date()} />
-          <BlogListItem title="Working at MongoDB" date={new Date()} />
-          <BlogListItem title="The Great Ocean Road" date={new Date()} />
-          <BlogListItem title="Classifying Artwork" date={new Date()} />
-          <BlogListItem title="Yayoi Kusama" date={new Date()} />
+          <BlogListItem title="Three days with a Leica M" date={new Date(2017, 11, 25)} />
+          <BlogListItem title="Working at MongoDB" date={new Date(2017, 8, 31)} />
+          <BlogListItem title="The Great Ocean Road" date={new Date(2017, 6, 7)} />
+          <BlogListItem title="Classifying Artwork" date={new Date(2017, 5, 25)} />
+          <BlogListItem title="Yayoi Kusama" date={new Date(2017, 5, 6)} />
         </BlogListSection>
       </PageBody>
       <Footer currentPage="blog" />
