@@ -9,7 +9,7 @@ import BlogPage from './components/blog-page';
 import ContactPage from './components/contact-page';
 import HomePage from './components/home-page';
 
-import {WorkingAtMongodb} from './components/blog-post/posts';
+import {WorkingAtMongodb, TheGreatOceanRoad} from './components/blog-post/posts';
 
 import './index.css';
 
@@ -22,6 +22,7 @@ ReactDOM.render(
     <Route path={RoutesMap.blog} component={BlogPage} />
     <Route path={RoutesMap.contact} component={ContactPage} />
     <Route path={BlogRoutesMap['working-at-mongodb']} component={WorkingAtMongodb} />
+    <Route path={BlogRoutesMap['the-great-ocean-road']} component={TheGreatOceanRoad} />
   </Router>,
   document.getElementById('root')
 );

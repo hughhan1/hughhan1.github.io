@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import BlogPost from './index';
 
-export const WorkingAtMongodb: React.SFC<{}> = (props: {}) => {
+export const WorkingAtMongodb: React.SFC<{}> = (): JSX.Element => {
   return (
     <BlogPost title="Working at MongoDB" date={new Date(2017, 11, 25)}>
       <p>
@@ -217,4 +217,26 @@ export const WorkingAtMongodb: React.SFC<{}> = (props: {}) => {
   );
 };
 
-export default WorkingAtMongodb;
+export const TheGreatOceanRoad: React.SFC<{}> = (): JSX.Element => {
+  const NUM_PHOTOS = 22;
+  const PHOTOS_PATH = '../../static/img/the-great-ocean-road';
+
+  /**
+   * Renders the photos for this blog post.
+   * 
+   * @note this function assumes a constant number of photos, the photos path, and the naming
+   * convention of the photos.
+   */
+  const renderPhotos = (): JSX.Element => {
+    const photos = [];
+    for (let i = 1; i <= NUM_PHOTOS; i++) {
+      photos.push(<img src={require(`${PHOTOS_PATH}/${i.toString().padStart(2, '0')}.jpg`)} alt={`${i}`}></img>)
+    }
+    return <tbody>{photos}</tbody>
+  }
+
+  return <BlogPost title="The Great Ocean Road" date={new Date(2017, 6, 7)}>
+    <p>I'm in Australia!</p>
+    {renderPhotos()}
+  </BlogPost>
+}

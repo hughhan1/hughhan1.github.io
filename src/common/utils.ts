@@ -1,4 +1,5 @@
 import {MONTH_NAMES, SHORT_MONTH_LENGTH} from './constants';
+import {BlogRoutesMap} from './routes';
 
 export const getMonthName = (date: Date): string => {
   return MONTH_NAMES[date.getMonth()];
@@ -21,3 +22,11 @@ export const getNavigatorLanguage = () => {
     // return navigator.userLanguage || navigator.language || navigator.browserLanguage || 'en';
   }
 };
+
+/**
+ * Given a blog post title, returns the route to that blog post.
+ * @param title the title used to retrieve the route of the blog post
+ */
+export function getRouteFromBlogPostTitle(title: string): string {
+  return BlogRoutesMap[title.replace(/\s+/g, '-').toLowerCase()];
+}

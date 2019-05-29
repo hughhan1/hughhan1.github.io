@@ -5,13 +5,13 @@ import Header from '../header';
 import PageBody from '../page-body';
 import PageContainer from '../page-container';
 
-import {getAbbreviatedDate} from '../../common/utils';
+import {getAbbreviatedDate, getRouteFromBlogPostTitle} from '../../common/utils';
 
 import './index.css';
 import {Link} from 'react-router-dom';
 import {BlogRoutesMap} from '../../common/routes';
 
-export const BlogPage: React.SFC<{}> = (props: {}) => {
+export const BlogPage: React.SFC<{}> = () => {
   return (
     <PageContainer>
       <Header text="blog" />
@@ -37,11 +37,10 @@ interface BlogListItemProps {
 }
 
 const BlogListItem: React.SFC<BlogListItemProps> = (props: BlogListItemProps) => {
-  const route = BlogRoutesMap[props.title.replace(/\s+/g, '-').toLowerCase()];
   return (
     <div className="blog-list-item">
       <span className="blog-list-item__title">
-        <Link to={route}>{props.title}</Link>
+        <Link to={getRouteFromBlogPostTitle(props.title)}>{props.title}</Link>
       </span>
       <span className="blog-list-item__date">{getAbbreviatedDate(props.date)}</span>
     </div>
