@@ -8,7 +8,7 @@ import Header from '../header';
 
 import './index.css';
 
-export const AboutPage: React.SFC<{}> = (props: {}) => {
+export const AboutPage: React.SFC<{}> = () => {
   return (
     <PageContainer>
       <Header text="about" />
