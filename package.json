@@ -10,6 +10,7 @@
     "@types/react-dom": "16.8.3",
     "@types/react-router-dom": "^4.3.4",
     "classnames": "^2.2.6",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
@@ -18,6 +19,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -31,5 +34,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "homepage" : "http://hughhan1.github.io"
+  "homepage": "http://hughhan1.github.io"
 }
