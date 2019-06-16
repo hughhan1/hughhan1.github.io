@@ -35,15 +35,14 @@ export const AboutPage: React.SFC<{}> = () => {
           .
         </p>
         <p>
-          I love photography, journaling, and late-romantic classical music. In my free time I like
-          to dance, read, shoot photos and videos, and play (what I think is) a mean game of Super
-          Smash Bros Melee.
+          I like photography, journaling, and classical music. In my free time I like to dance,
+          read, and play Super Smash Bros Melee.
         </p>
         <p>
           Here are some additional things that make me happy.
           <ul>
-            <li>mediocrely taken photographs of fond memories</li>
-            <li>well yet concisely documented code</li>
+            <li>photographs of fond memories</li>
+            <li>thoughtfully designed and well tested code</li>
             <li>
               Rachmaninoff's{' '}
               <a href="https://www.youtube.com/watch?v=ShvUF-ucOSg" target="_blank">
