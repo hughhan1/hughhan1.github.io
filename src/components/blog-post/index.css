@@ -1,5 +1,0 @@
-@import '../../common/css/constants.css';
-
-.blog-post__date {
-  color: var(--color_date_gray);
-}
