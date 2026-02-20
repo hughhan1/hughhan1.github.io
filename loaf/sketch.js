@@ -3823,7 +3823,7 @@ function setup() {
   document.body.style.backgroundColor = "rgb(242, 211, 211)";
   document.body.style.margin = "0";
   document.body.style.padding = "0";
-  document.body.style.overflow = "auto";
+  document.body.style.overflow = "hidden";
 
   // Create a container div for the canvas
   mainContainer = createDiv();
@@ -3845,6 +3845,19 @@ function setup() {
   textDiv = createDiv(MESSAGE);
   textDiv.parent(mainContainer);
   updateTextDiv();
+
+  // Credit link
+  let creditLink = createA("https://siyushen.com/", "Designed by Siyu Shen");
+  creditLink.parent(mainContainer);
+  creditLink.style("position", "absolute");
+  creditLink.style("top", "20px");
+  creditLink.style("left", "55px");
+  creditLink.style("font-family", "monospace");
+  creditLink.style("font-size", "11px");
+  creditLink.style("color", "rgb(140, 98, 57)");
+  creditLink.style("text-decoration", "none");
+  creditLink.style("opacity", "0.6");
+  creditLink.attribute("target", "_blank");
 
   noStroke();
   updateScaling();
@@ -3869,22 +3882,12 @@ function setup() {
       opacity: 0.7;
     }
 
-    .selectedIcon {
-      color: rgb(242, 211, 211);
-      background-color: rgb(140, 98, 57);
-      border-radius: 0;
-    }
-    
-    .selectedIcon svg path,
-    .selectedIcon svg line,
-    .selectedIcon svg rect {
-      stroke: rgb(242, 211, 211) !important;
-    }
   `;
   createElement("style", css);
 
   // Off-screen graphics
   pg = createGraphics(width, height);
+  pg.pixelDensity(1);
 
   // Default text font is the regular font
   textFont(regularFont);
@@ -3926,6 +3929,7 @@ function setup() {
   createStyleButtons();
   positionStyleButtons();
 
+  updateContainerScale();
   frameRate(60);
 }
 
@@ -4195,6 +4199,12 @@ function updateScaling() {
   offsetY = height / 2 - BASE_SHAPE_CENTER_Y * scaleFactor + 200;
 }
 
+function updateContainerScale() {
+  let s = Math.min(1, window.innerWidth / 1080, window.innerHeight / 1080);
+  mainContainer.style("transform", "scale(" + s + ")");
+  mainContainer.style("transform-origin", "top center");
+}
+
 function styleButton(btn) {
   btn.class("myButton");
 
@@ -4206,7 +4216,7 @@ function styleButton(btn) {
   let textSpan = createSpan(btnText);
   textSpan.parent(btn);
   textSpan.style("border-bottom", "1px solid rgb(140, 98, 57)");
-  image.png;
+
   textSpan.style("line-height", "1.4");
   textSpan.style("display", "inline-block");
 
@@ -4254,7 +4264,7 @@ function updateTextDiv() {
   textDiv.style("position", "absolute");
   textDiv.style("width", "100%"); // Full width of container
   textDiv.style("max-width", "none"); // Remove max-width constraint
-  textDiv.style("top", "20px");
+  textDiv.style("top", "36px");
   textDiv.style("left", "0"); // Align to left edge
   textDiv.style("padding", "12px 55px"); // Add padding on sides for readability
   textDiv.style("box-sizing", "border-box"); // Include padding in width calculation
@@ -4268,58 +4278,6 @@ function updateTextDiv() {
   textDiv.style("pointer-events", "none"); // Don't block mouse events
 }
 
-function drawJustifiedText(str, x, y, width, lineHeight) {
-  const words = str.split(/\s+/);
-  let currentLine = [];
-  let currentY = y;
-
-  for (let i = 0; i < words.length; i++) {
-    currentLine.push(words[i]);
-
-    // Check if adding the next word would exceed width
-    if (i < words.length - 1) {
-      const testLine = [...currentLine, words[i + 1]];
-      const testWidth = textWidth(testLine.join(" "));
-
-      if (testWidth > width) {
-        // Justify and draw the current line
-        drawJustifiedLine(currentLine, x, currentY, width);
-        currentLine = [];
-        currentY += lineHeight;
-      }
-    }
-  }
-
-  // Draw the last line (either left-aligned or justified)
-  if (currentLine.length > 0) {
-    // For last line, you can choose to justify or left-align
-    // For full justification, use:
-    drawJustifiedLine(currentLine, x, currentY, width);
-    // For left-aligned last line (more common in typography), use:
-    // text(currentLine.join(' '), x, currentY);
-  }
-}
-
-function drawJustifiedLine(words, x, y, width) {
-  if (words.length <= 1) {
-    text(words[0], x, y);
-    return;
-  }
-
-  const textContent = words.join(" ");
-  const naturalWidth = textWidth(textContent);
-  const extraSpace = width - naturalWidth;
-  const spacesToDistribute = words.length - 1;
-  const extraSpacePerGap = extraSpace / spacesToDistribute;
-
-  let currentX = x;
-  for (let i = 0; i < words.length; i++) {
-    text(words[i], currentX, y);
-    if (i < words.length - 1) {
-      currentX += textWidth(words[i]) + textWidth(" ") + extraSpacePerGap;
-    }
-  }
-}
 
 function windowResized() {
   // Store old transformation values before they're updated
@@ -4348,6 +4306,7 @@ function windowResized() {
 
   // Recreate the pg buffer with new dimensions
   pg = createGraphics(width, height);
+  pg.pixelDensity(1);
   pg.background(0);
   drawLOAF(pg);
 
@@ -4363,6 +4322,7 @@ function windowResized() {
   // Reposition UI elements
   positionButtons();
   positionStyleButtons();
+  updateContainerScale();
 }
 
 function createStyleButtons() {
